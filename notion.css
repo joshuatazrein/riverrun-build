@@ -1,0 +1,165 @@
+/* white text */
+.custom-css main {
+  color: white !important;
+}
+
+/* change background */
+.custom-css [style*='background: rgb(25, 25, 25)'] {
+  background: black !important;
+}
+
+.custom-css [style*='background: rgb(32, 32, 32)'] {
+  background: black !important;
+}
+
+/* hide title and card fonts */
+.custom-css .notion-app-inner {
+  font-family: 'Asap', sans-serif !important;
+  font-weight: 200 !important;
+  font-size: 20px !important;
+}
+
+/* change peek titles to be lighter and smaller */
+.custom-css [style*='font-weight: 700;'] [placeholder='Untitled'] {
+  font-weight: 400 !important;
+  font-size: 32px !important;
+}
+
+/* change font weight for database card views, titles in peeks (font-weight 700), all text except headings, and other stuff */
+.custom-css [placeholder='Untitled'][style*='font-weight: 500;'],
+.notion-page-content
+  [contenteditable='true']:not(.whenContentEditable):not(
+    [placeholder*='Heading']
+  ),
+[contenteditable='true'][placeholder=' '] {
+  font-weight: 200 !important;
+}
+
+/* formatting for SANS-SERIF & MONOSPACE PAGE (skip small text) */
+.custom-css .notion-page-content:not([style*='font-size: 14px']) [contenteditable='true']:not(.whenContentEditable):not([placeholder*='Heading']),
+.custom-css .notion-page-content:not([style*='font-size: 14px']) [placeholder='Untitled'],
+.custom-css .notion-table-view [style*='font-size: 14px'],
+.custom-css .notion-peek-renderer [style*='font-size: 14px'],
+.custom-css .notion-default-overlay-container [style*='font-size: 14px']
+
+/* spreadsheet views */ {
+  font-size: 16px !important;
+}
+
+/* formatting for SERIF PAGE (skip small text) */
+.custom-css .notion-page-content[style*='font-family: Lyon-Text, Georgia, ui-serif, serif']:not([style*='font-size: 15px']) [contenteditable='true']:not(.whenContentEditable):not([placeholder*='Heading']),
+.custom-css .notion-page-content[style*='font-family: Lyon-Text, Georgia, ui-serif, serif']:not([style*='font-size: 15px']) [placeholder='Untitled']
+/* spreadsheet views */ {
+  font-size: 20px !important;
+}
+
+.custom-css .notion-page-content[style*='font-family: Lyon-Text, Georgia, ui-serif, serif'] [contenteditable='true']:not(.whenContentEditable),
+.custom-css .notion-page-content[style*='font-family: Lyon-Text, Georgia, ui-serif, serif'] .notion-code-block,
+.custom-css .notion-page-content[style*='font-family: Lyon-Text, Georgia, ui-serif, serif'] [placeholder='Untitled']
+/* spreadsheet views */ {
+  font-family: 'Cormorant Garamond' !important;
+}
+
+.custom-css .notion-page-content {
+  line-height: 1.5 !important;
+}
+
+/* less font weight in body text */
+.custom-css .notranslate[style*='font-weight: 500'],
+.custom-css .notion-table-view [style*='font-size: 14px'] {
+  font-weight: 200 !important;
+}
+
+/* less side padding */
+.custom-css [style*='padding-left: calc(96px + env(safe-area-inset-left));'],
+.custom-css [style*='padding-left: calc(126px + env(safe-area-inset-left));'],
+/* [style*='padding-left: 96px'], */
+[style*='padding-left: 126px'] {
+  padding-left: 48px !important;
+}
+
+.custom-css [style*='padding-right: calc(126px + env(safe-area-inset-right));'],
+.custom-css [style*='padding-right: calc(96px + env(safe-area-inset-right));'],
+/* [style*='padding-right: 96px'], */
+.custom-css [style*='padding-right: 126px'] {
+  padding-right: 48px !important;
+}
+
+/* less top controls */
+.custom-css .notion-page-controls {
+  margin-top: 4px !important;
+}
+
+/* make sure everything is full width of page */
+.custom-css .notion-text-block,
+.custom-css .notion-sub_header-block {
+  max-width: 100% !important;
+}
+
+/* add background for collapsable headers */
+.custom-css .notion-sub_header-block {
+  background: rgb(6, 6, 6) !important;
+  border-radius: 4px !important;
+  padding: 4px !important;
+  margin-bottom: 11px !important;
+}
+
+/* add roundedness on center peeks */
+.custom-css .notion-peek-renderer > :nth-child(2),
+.custom-css .notion-peek-renderer > :nth-child(1) {
+  border-radius: 8px !important;
+}
+
+/* thinner scrollbar */
+.custom-css ::-webkit-scrollbar {
+  width: 4px !important;
+  height: 4px !important;
+}
+
+/* cut greyed out text on timeline views */
+.custom-css [style*='-webkit-mask-image: linear-gradient(90deg, rgb(0, 0, 0)'] {
+  -webkit-mask-image: none !important;
+}
+
+/* change hover color on cards and sections */
+.custom-css .notion-focusable:hover,
+[style*='background: rgb(37, 37, 37)'] {
+  background: #0b1017 !important;
+}
+
+/* no halo for card views */
+.custom-css .notion-selectable-halo {
+  border: none !important;
+}
+
+/* cards wrap their properties instead of listing them (targets properties container in card) */
+.custom-css
+  .notion-focusable[style*='user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; width: 100%; height: 100%;']
+  > :nth-child(3) {
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+}
+
+/* card properties not full width, but wrap if necessary */
+.custom-css
+  .notion-focusable[style*='user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; width: 100%; height: 100%;']
+  > :nth-child(3)
+  > * {
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  max-width: 100% !important;
+  font-size: 14px !important;
+}
+
+/* wrap notes text in card properties (excludes bullets) */
+.custom-css
+  .notion-focusable[style*='user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; width: 100%; height: 100%;']
+  > :nth-child(3)
+  :not([style*='border-radius: 99px;']) {
+  white-space: pre-wrap !important;
+  height: fit-content !important;
+}
+
+.custom-css .nv-notes-format {
+  display: block !important;
+}

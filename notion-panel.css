@@ -1,0 +1,7 @@
+.notion-topbar {
+  display: none !important;
+}
+
+.notion-frame {
+  height: 100vh !important;
+}

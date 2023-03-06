@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Views for Notion",
+  "version": "0.1",
+  "description": "Notion supercharged",
+
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "https://www.notion.so/*",
+    "https://api.notion.com/*",
+    "https://www.googleapis.com/*",
+    "https://fonts.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["static/media/*", "logo.png", "fonts/*"],
+      "matches": ["https://www.notion.so/*"]
+    }
+  ],
+  "permissions": ["storage", "identity", "identity.email"],
+  "key": "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj8AbI2CvGI3/z8a3STlRSojtvKRrhn5auncIEoiun2DZPbN953ewyk8Zm+9jlevPviJj2PSUv+IJftnEmzJRM5sOGWrkfCG9rQuq+rgGUROtk+PXOR7B+I0/ORHS1s0UA6+hzJD4xJtCNMrpnxOj5NhxT246ViRbuVw42D4M/rvWmNBPHPkc0jJpHf4C/N0VyMBNKBiTX+d/CNgMvEZ1e3rOuG8FzWIzIaoKx4opKrQRkqzkCai/FwOg0TXtRdoitJwGN5v3LhgLIQtnaI5qjd5U1h61+OSbFcLHIiMnQjI302FbxvE56DMGAnJtaZtAc4Nj8SXQCyXT7/DlqVZbcQIDAQAB-----END PUBLIC KEY-----",
+  "oauth2": {
+    "client_id": "682242675225-npcl9o0tquk83hgeabeq0ddjn57e0dv0.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar.readonly",
+      "https://www.googleapis.com/auth/calendar.events",
+      "openid",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  },
+  "content_scripts": [
+    {
+      "js": ["static/js/main.js", "notion.js"],
+      "css": ["static/css/main.css", "notion.css"],
+      "matches": ["https://www.notion.so/*"]
+    }
+  ]
+}
